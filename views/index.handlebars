@@ -1,0 +1,128 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <img id="burgerpic" src="/assets/img/burger5.png" alt="burger">
+      <h1>Eat-Da-Burger!</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6">
+      {{#each burgers}}
+        {{#unless devoured}}
+
+        <div class="col-xs-9 text-center">
+          <pre>{{this.id}}. {{this.burger_name}}</pre>
+        </div>
+        <div class="col-xs-3">
+          <button class="devour btn btn-success" data-id="{{id}}" data-devour="{{devoured}}">Devour it!</button><br>
+          <button class="delete-burg btn btn-danger" data-id="{{id}}" data-devour="{{devoured}}">Delete Burger</button>
+        </div>
+
+        {{/unless}}
+      {{/each}}
+    </div>
+    <div class="col-xs-6">
+      {{#each burgers}}
+      {{#if devoured}}
+      <div class="col-xs-9 text-center">
+        <input class="form-control" placeholder="{{this.id}}. {{this.burger_name}}" readonly>
+      </div>
+      <div class="col-xs-3">
+        <button class="again btn btn-success" data-id="{{id}}" data-devour="{{devoured}}">Regurgitate it!</button>
+            <button class="delete-burg btn btn-danger" data-id="{{id}}" data-devour="{{devoured}}">Delete Burger</button>
+      </div>
+      {{/if}}
+      {{/each}}
+    </div>
+  </div>
+
+    <div class="row">
+      <h2>Add a Burger!</h2>
+      <form id="newBurg" class="button-size">
+        <textarea type="text" name="burger"></textarea><br>
+        <button class="btn btn-primary" type="submit" id="saveBurg">Save Burger!</button>
+      </form>
+      <p>Enter a burger you want to eat and save that burger!</p>
+    </div>
+
+</div>
+
+
+<script type="text/javascript">
+  $(".devour").on("click", function(event) {
+
+    var id = $(this).data("id");
+    var devoured = {
+      devoured: 1
+    };
+    console.log(devoured);
+
+    $.ajax("/api/burgers/" + id, {
+      type: "PUT",
+      data: devoured
+    }).then(
+      function() {
+        console.log("changed devoured status to ", devoured);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
+
+  $("#newBurg").on("submit", function(event) {
+    // Make sure to preventDefault on a submit event.
+    event.preventDefault();
+
+    var newBurg = {
+      burger_name: $("#newBurg [name=burger]").val().trim()
+    };
+
+    // Send the POST request.
+    $.ajax("/api/burgers", {
+      type: "POST",
+      data: newBurg
+    }).then(
+      function() {
+        console.log("added burger");
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
+
+  $(".again").on("click", function(event) {
+
+    var id = $(this).data("id");
+    var devoured = {
+      devoured: 0
+    };
+    console.log(devoured);
+
+    $.ajax("/api/burgers/" + id, {
+      type: "PUT",
+      data: devoured
+    }).then(
+      function() {
+        console.log("changed devoured status to ", devoured);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
+
+  $(".delete-burg").on("click", function(event) {
+  var id = $(this).data("id");
+
+  // Send the DELETE request.
+  $.ajax("/api/burgers/" + id, {
+    type: "DELETE",
+  }).then(
+    function() {
+      console.log("deleted burger", id);
+      // Reload the page to get the updated list
+      location.reload();
+    }
+  );
+});
+
+</script>
