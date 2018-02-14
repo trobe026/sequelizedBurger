@@ -36,7 +36,8 @@ module.exports = function(app) {
     })
     .catch(function(err) {
       res.json(err);
-    });
+    })
+    ;
   });
 
   app.delete("/api/burgers/:id", function(req, res) {

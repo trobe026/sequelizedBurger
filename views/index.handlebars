@@ -38,6 +38,9 @@
 
     <div class="row">
       <h2>Add a Burger!</h2>
+
+      <div id="errors"></div>
+
       <form id="newBurg" class="button-size">
         <textarea type="text" name="burger"></textarea><br>
         <button class="btn btn-primary" type="submit" id="saveBurg">Save Burger!</button>
@@ -83,12 +86,14 @@
       type: "POST",
       data: newBurg
     }).then(
-      function() {
-        console.log("added burger");
-        // Reload the page to get the updated list
-        location.reload();
-      }
-    );
+      function(err) {
+        if (err.errors) {
+          $('#errors').html(`<h3> ${err.errors[0].message} </h3>`);
+        } else {
+          console.log("added burger");
+          location.reload();
+        }
+      });
   });
 
   $(".again").on("click", function(event) {
@@ -125,5 +130,11 @@
     }
   );
 });
+
+$(document).click(function() {
+  if ($('#errors').html().length > 0) {
+    $('#errors').empty();
+  }
+})
 
 </script>

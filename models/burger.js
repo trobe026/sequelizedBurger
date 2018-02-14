@@ -4,7 +4,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
     allowNull: false,
     validate: {
-      len: [2, 140]
+      len: {
+        args: [3, 140],
+        msg: "Burger must be at least 3 characters long!"
+      }
     }
   },
   devoured: {
