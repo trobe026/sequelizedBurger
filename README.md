@@ -1,4 +1,4 @@
-# Eat-Da-Burger
+# Eat-Da-Burger Sequelize
 
 This is a Full-Stack Web App built using Express Handlebars and MySQL.  The app allows users to input the names of burgers they'd like to eat, which will then appear in a pane on the left side.  
 
@@ -8,6 +8,6 @@ If they choose to devour it, the burger will move to a right-side pane, where th
 
 All burgers are saved to a MySQL database.  The app is also deployed on Heroku using JawsDB.
 
-Link to app: https://rocky-scrubland-92095.herokuapp.com/
+Link to app:
 
 Enjoy!
