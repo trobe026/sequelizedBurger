@@ -20,7 +20,7 @@ require("./routes/burger-api-routes.js")(app);
 require("./routes/customer-api-routes.js")(app);
 
 // sync force drops table on load
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync({ force: false }).then(function() {
   app.listen(PORT, function() {
     console.log("App now listening at localhost:" + PORT);
   });

@@ -15,8 +15,8 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "b77s6tihtco2tjzs",
-    "password": "zxtkqdvdiwq5b153",
+    "username": "tipbqhfbfenz3cxe",
+    "password": "og6pbhdlrqz5ch3w",
     "database": "burgers2_db",
     "host": "kavfu5f7pido12mr.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql",
