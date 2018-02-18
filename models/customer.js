@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes) {
       validate: {
         len: {
           args: [3, 40],
-          msg: "Name must be at least 2 characters long!"
+          msg: "Name must be at least 3 characters long!"
         }
       }
     }
