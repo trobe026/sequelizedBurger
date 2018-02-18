@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-2">
+      <h2><a href="/">Back to Burgers</a></h2>
+    </div>
+    <div class="col-xs-8">
+      <img id="crownpic" src="/assets/img/crown.png" alt="crown">
+      <h1>Burger Hall of Fame</h1>
+    </div>
+    <div class="col-xs-2">
+      <h2><a href="/newCust" class='pull-right'>Add your vote!</a></h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Voter Log:</h2>
+      <table>
+        <tr>
+          <th><h3>Customer Name:</h3></th>
+          <th><h3>Favorite Burger:</h3></th>
+        </tr>
+        {{#each votes}}
+        <tr>
+          <td>{{this.customer_name}}</td>
+          <td>{{this.burger.burger_name}}</td>
+        </tr>
+        {{/each}}
+      </table>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sx-12">
+      <h2>Hall of Famers:</h2>
+    </div>
+  </div>
+
+</div>
+<script type="text/javascript">
+
+</script>

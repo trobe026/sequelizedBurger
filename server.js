@@ -16,8 +16,10 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-require("./routes/api-routes.js")(app);
+require("./routes/burger-api-routes.js")(app);
+require("./routes/customer-api-routes.js")(app);
 
+// sync force drops table on load
 db.sequelize.sync({ force: true }).then(function() {
   app.listen(PORT, function() {
     console.log("App now listening at localhost:" + PORT);

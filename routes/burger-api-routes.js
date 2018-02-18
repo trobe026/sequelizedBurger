@@ -10,6 +10,8 @@ module.exports = function(app) {
       };
 
       res.render("index", hbsObject);
+      console.log(hbsObject)
+      // res.render("hof", hbsObject);
     });
   });
 
@@ -33,11 +35,9 @@ module.exports = function(app) {
       burger_name: req.body.burger_name
     }).then(function(results) {
       res.json(results);
-    })
-    .catch(function(err) {
+    }).catch(function(err) {
       res.json(err);
-    })
-    ;
+    });
   });
 
   app.delete("/api/burgers/:id", function(req, res) {

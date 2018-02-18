@@ -3,6 +3,7 @@ body {
   text-align: center;
   padding: 20px;
   font-family: 'Indie Flower', cursive;
+  font-size: 1.3vw;
   /* font-family: 'Nanum Brush Script', cursive; */
 }
 
@@ -19,13 +20,22 @@ h2 {
   margin-top: 40px;
 }
 
+table {
+  width: 100%;
+  font-size: 1.6vw;
+}
+
+th {
+  text-align: center;
+  text-decoration: underline;
+}
+
 pre {
   font-family: 'Nanum Brush Script', cursive;
 }
 
 p {
   font-family: 'Indie Flower', cursive;
-  font-size: 1.5em;
 }
 
 ul {
@@ -41,6 +51,10 @@ img {
   animation-timing-function: linear;
   width: 12%;
   z-index: 2;
+}
+
+#crownpic {
+  width: 20vw;
 }
 
 /* @-webkit-keyframes moveburg {
@@ -74,10 +88,30 @@ pre {
 textarea {
   width: 40%;
   height: 100px;
-  font-size: 2em;
+  font-size: 2vw;
+}
+
+input {
+  width: 25vw;
+}
+
+a {
+  font-size: 2vw;
 }
 
 .btn {
   margin: 5px auto;
   font-size: 1.4vw;
+}
+
+/* Hall of Fame CSS */
+
+
+/* Add Customer CSS */
+select {
+  display: inline-block;
+}
+#vote {
+  display: block;
+  margin: 10px auto;
 }
