@@ -15,6 +15,7 @@
     "dialect": "mysql"
   },
   "production": {
+    "use_env_variable": "JAWSDB_URL",
     "username": "tipbqhfbfenz3cxe",
     "password": "og6pbhdlrqz5ch3w",
     "database": "burgers2_db",
