@@ -4,6 +4,8 @@ var bodyParser = require("body-parser");
 var app = express();
 var PORT = process.env.PORT || 8080;
 
+console.log(process.env);
+
 var db = require("./models");
 
 app.use(express.static("public"));
