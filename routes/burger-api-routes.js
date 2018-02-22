@@ -4,15 +4,16 @@ var db = require("../models");
 module.exports = function(app) {
 
   app.get("/", function(req, res) {
-    db.burgers.findAll({}).then(function(results) {
-      var hbsObject = {
-        burgers: results
-      };
-
-      res.render("index", hbsObject);
-      console.log(hbsObject)
-      // res.render("hof", hbsObject);
-    });
+    console.log("sup");
+    // db.burgers.findAll({}).then(function(results) {
+    //   var hbsObject = {
+    //     burgers: results
+    //   };
+    //
+    //   res.render("index", hbsObject);
+    //   console.log(hbsObject)
+    //   // res.render("hof", hbsObject);
+    // });
   });
 
   app.put("/api/burgers/:id", function(req, res) {
