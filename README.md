@@ -4,10 +4,10 @@ This is a Full-Stack Web App built using Express Handlebars and MySQL.  The app 
 
 The user can then choose to **_Devour_** or **_Delete_** the burger.  
 
-If they choose to devour it, the burger will move to a right-side pane, where the user can delete it, or **_Regurgitate it_** to move it back to the left-side pane.
+If they choose to devour it, the burger will move to a right-side pane, where the user can delete it, or **_Re-Order it_** to move it back to the left-side pane.
 
 All burgers are saved to a MySQL database.  The app is also deployed on Heroku using JawsDB.
 
-Link to app:
+Link to app: https://rocky-bayou-37862.herokuapp.com/
 
 Enjoy!
